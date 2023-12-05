@@ -33,7 +33,15 @@ main {
   margin-bottom: 30px;
 }
 
-img {
+#information {
+  display: none;
+  color: black;
+  width: 80%;
+  margin-top: 30px;
+  border: 2px solid black;
+}
+
+#boston {
   width: 48%;
   padding: 15px;
 }
