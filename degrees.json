@@ -1,0 +1,20 @@
+{
+  "degrees": [
+    {
+      "degreesEarned": {
+        "school": "Addis Ababa Science and Technology University",
+        "programMajor": "Software Engineering",
+        "type": "BS",
+        "yearConferred": 2022
+      }
+    },
+    {
+      "degreesInProgress": {
+        "school": "Boston University",
+        "programMajor": "Software Development",
+        "type": "MS",
+        "yearConferred": 2024
+      }
+    }
+  ]
+}
