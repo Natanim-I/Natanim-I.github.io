@@ -18,34 +18,35 @@ function handleMouseClick() {
       return response.json();
     })
     .then((data) => {
+      console.log(data);
       const tableData = document.getElementById("data");
       let tr1 = document.createElement("tr");
       let td1 = document.createElement("td");
-      td1.textContent = data[0].school;
+      td1.textContent = data.degrees[0].school;
       let td2 = document.createElement("td");
-      td2.textContent = data[0].programMajor;
+      td2.textContent = data.degrees[0].programMajor;
       let td3 = document.createElement("td");
-      td3.textContent = data[0].type;
+      td3.textContent = data.degrees[0].type;
       let td4 = document.createElement("td");
-      td4.textContent = data[0].yearConfered;
+      td4.textContent = data.degrees[0].yearConfered;
+      let tr2 = document.createElement("tr");
+      let td5 = document.createElement("td");
+      td5.textContent = data.degrees[1].school;
+      let td6 = document.createElement("td");
+      td6.textContent = data.degrees[1].programMajor;
+      let td7 = document.createElement("td");
+      td7.textContent = data.degrees[1].type;
+      let td8 = document.createElement("td");
+      td8.textContent = data.degrees[1].yearConfered;
       tr1.appendChild(td1);
       tr1.appendChild(td2);
       tr1.appendChild(td3);
       tr1.appendChild(td4);
-      tableData.appendChild(tr1);
-      let tr2 = document.createElement("tr");
-      let td5 = document.createElement("td");
-      td1.textContent = data[1].school;
-      let td6 = document.createElement("td");
-      td2.textContent = data[1].programMajor;
-      let td7 = document.createElement("td");
-      td3.textContent = data[1].type;
-      let td8 = document.createElement("td");
-      td4.textContent = data[1].yearConfered;
       tr2.appendChild(td5);
       tr2.appendChild(td6);
       tr2.appendChild(td7);
       tr2.appendChild(td8);
+      tableData.appendChild(tr1);
       tableData.appendChild(tr2);
     })
     .catch((error) => {
