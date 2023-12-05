@@ -1,8 +1,10 @@
+//defining the html elements for DOM Manipulation
 const start = document.getElementById("start");
 const img = document.getElementById("boston");
 const info = document.getElementById("information");
 const main = document.getElementById("main");
 
+//adding a mouse click event for the button
 start.addEventListener("click", () => {
   img.src = "./assets/images/natanim.svg";
   img.style.width = "35%";
@@ -10,6 +12,9 @@ start.addEventListener("click", () => {
   handleMouseClick();
 });
 
+/***
+ * A function to handle the fetch request with a promise class and process the JSON Data
+ */
 function handleMouseClick() {
   fetch("https://natanim-i.github.io/degrees.json")
     .then((response) => {
