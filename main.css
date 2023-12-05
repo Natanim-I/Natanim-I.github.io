@@ -1,0 +1,73 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: whitesmoke;
+}
+
+header {
+  background: linear-gradient(10deg, #12c2e9, 40%, #f64f59);
+  font-weight: bolder;
+  text-align: center;
+  font-size: 140%;
+  padding: 5px;
+}
+
+@media (max-width: 500px) {
+  header {
+    font-size: 120%;
+  }
+}
+@media (max-width: 430px) {
+  header {
+    font-size: 100%;
+  }
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+img {
+  width: 48%;
+  padding: 15px;
+}
+
+#start {
+  width: 20%;
+  height: 40px;
+  border: 2px solid;
+  background: linear-gradient(10deg, #12c2e9, 70%, #f64f59);
+  padding: 3px;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 100%;
+  color: wheat;
+  font-weight: bolder;
+  transition: all 0.25s;
+}
+#start:hover {
+  letter-spacing: 5px;
+}
+
+@media (max-width: 1000px) {
+  #start {
+    width: 30%;
+  }
+}
+footer {
+  background: linear-gradient(10deg, #12c2e9, 40%, #f64f59);
+  text-align: center;
+  padding: 3px;
+}
+
+@keyframes slidebg {
+  to {
+    background-position: 20vw;
+  }
+}
