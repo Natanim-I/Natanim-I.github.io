@@ -11,7 +11,7 @@ start.addEventListener("click", () => {
 });
 
 function handleMouseClick() {
-  fetch("https://natanim-i.github.io/degree.json")
+  fetch("https://natanim-i.github.io/degrees.json")
     .then((response) => {
       if (!response.ok) {
         if (response.status == 404) {
