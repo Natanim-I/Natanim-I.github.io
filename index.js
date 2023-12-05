@@ -3,7 +3,7 @@ const img = document.getElementById("boston");
 const info = document.getElementById("information");
 
 start.addEventListener("click", () => {
-  img.style.display = "none";
+  img.src = "./assets/images/natanim.svg";
   info.style.display = "block";
   handleMouseClick();
 });
@@ -18,21 +18,35 @@ function handleMouseClick() {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
       const tableData = document.getElementById("data");
-      tableData.innerHTML = "";
-      data.foreach((degree) => {
-        const row = tableData.insertRow();
-        const cellSchool = row.insertCell(0);
-        const cellMajor = row.insertCell(1);
-        const cellType = row.insertCell(2);
-        const cellYear = row.insertCell(3);
-
-        cellSchool.textContent = degree.school;
-        cellMajor.textContent = degree.programMajor;
-        cellType.textContent = degree.cellType;
-        cellYear.textContent = degree.yearConfered;
-      });
+      let tr1 = document.createElement("tr");
+      let td1 = document.createElement("td");
+      td1.textContent = data[0].school;
+      let td2 = document.createElement("td");
+      td2.textContent = data[0].programMajor;
+      let td3 = document.createElement("td");
+      td3.textContent = data[0].type;
+      let td4 = document.createElement("td");
+      td4.textContent = data[0].yearConfered;
+      tr1.appendChild(td1);
+      tr1.appendChild(td2);
+      tr1.appendChild(td3);
+      tr1.appendChild(td4);
+      tableData.appendChild(tr1);
+      let tr2 = document.createElement("tr");
+      let td5 = document.createElement("td");
+      td1.textContent = data[1].school;
+      let td6 = document.createElement("td");
+      td2.textContent = data[1].programMajor;
+      let td7 = document.createElement("td");
+      td3.textContent = data[1].type;
+      let td8 = document.createElement("td");
+      td4.textContent = data[1].yearConfered;
+      tr2.appendChild(td5);
+      tr2.appendChild(td6);
+      tr2.appendChild(td7);
+      tr2.appendChild(td8);
+      tableData.appendChild(tr2);
     })
     .catch((error) => {
       console.error("Error:", error);
