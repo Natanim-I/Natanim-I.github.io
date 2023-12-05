@@ -25,22 +25,27 @@ header {
   }
 }
 
-main {
+#main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 30px;
+  color: black;
 }
 
 #information {
   display: none;
   color: black;
-  width: 80%;
+  width: 90%;
   margin-top: 30px;
   border: 2px solid black;
 }
 
+td {
+  border: 2px solid black;
+  width: 40%;
+}
 #boston {
   width: 48%;
   padding: 15px;

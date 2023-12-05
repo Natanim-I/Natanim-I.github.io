@@ -1,20 +1,29 @@
 const start = document.getElementById("start");
 const img = document.getElementById("boston");
 const info = document.getElementById("information");
+const main = document.getElementById("main");
 
 start.addEventListener("click", () => {
   img.src = "./assets/images/natanim.svg";
+  img.style.width = "35%";
   info.style.display = "block";
   handleMouseClick();
 });
 
 function handleMouseClick() {
-  fetch("https://natanim-i.github.io/degrees.json")
+  fetch("https://natanim-i.github.io/degree.json")
     .then((response) => {
       if (!response.ok) {
+        if (response.status == 404) {
+          img.src = "./assets/images/404.svg";
+          start.style.display = "none";
+          info.style.display = "none";
+          let pageNotFound = document.createElement("h1");
+          pageNotFound.textContent = "Page Not Found!!!";
+          main.appendChild(pageNotFound);
+        }
         throw new Error("Network response was not OK");
       }
-      console.log("Status code:", response.status);
       return response.json();
     })
     .then((data) => {
@@ -28,7 +37,7 @@ function handleMouseClick() {
       let td3 = document.createElement("td");
       td3.textContent = data.degrees[0].type;
       let td4 = document.createElement("td");
-      td4.textContent = data.degrees[0].yearConfered;
+      td4.textContent = data.degrees[0].yearConferred;
       let tr2 = document.createElement("tr");
       let td5 = document.createElement("td");
       td5.textContent = data.degrees[1].school;
@@ -37,7 +46,7 @@ function handleMouseClick() {
       let td7 = document.createElement("td");
       td7.textContent = data.degrees[1].type;
       let td8 = document.createElement("td");
-      td8.textContent = data.degrees[1].yearConfered;
+      td8.textContent = data.degrees[1].yearConferred;
       tr1.appendChild(td1);
       tr1.appendChild(td2);
       tr1.appendChild(td3);
@@ -48,6 +57,7 @@ function handleMouseClick() {
       tr2.appendChild(td8);
       tableData.appendChild(tr1);
       tableData.appendChild(tr2);
+      start.disabled = true;
     })
     .catch((error) => {
       console.error("Error:", error);
