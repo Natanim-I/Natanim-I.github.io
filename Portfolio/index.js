@@ -1,4 +1,4 @@
-function shouResume() {
+function showResume() {
   const btnResume = document.getElementById("btn-resume");
   window.open("./assets/files/NatanimResume.pdf", "_blank");
 }
