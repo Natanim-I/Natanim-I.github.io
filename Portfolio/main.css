@@ -591,10 +591,12 @@ main {
   padding: 2%;
   font-size: 70%;
   background: transparent;
-  border: 1px solid green;
+  border: none;
+  border-bottom: 1px solid green;
 }
 
 #contact-form form input:focus {
+  border: 2px solid green;
   outline: none;
 }
 
@@ -618,6 +620,134 @@ main {
 #message-img img {
   width: 100%;
   height: 100%;
+}
+
+#send {
+  padding: 2% 3%;
+  border: 1px solid green;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 80%;
+  margin-left: 20%;
+  background-color: green;
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+
+#send:hover {
+  letter-spacing: 2px;
+}
+
+.faq-container {
+  margin: 0 auto;
+  padding: 3%;
+  width: 60%;
+  font-family: Mosk, sans-serif;
+}
+
+.faq-container h2 {
+  font-size: 150%;
+}
+
+.sub-container .topic {
+  border-bottom: 1px solid lightgray;
+}
+
+.sub-container button[aria-expanded="true"] {
+  border-bottom: 1px solid green;
+}
+
+.sub-container button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 2% 0;
+  color: #333;
+  font-size: 120%;
+  font-weight: 400;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.sub-container button:hover,
+.sub-container button:focus {
+  cursor: pointer;
+  color: green;
+}
+
+.sub-container button:hover::after,
+.sub-container button:focus::after {
+  cursor: pointer;
+  color: green;
+  border: 1px solid green;
+}
+
+.sub-container .topic {
+  padding: 1%;
+}
+
+.sub-container .icon {
+  display: inline-block;
+  position: absolute;
+  top: 30%;
+  right: 0;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 50%;
+}
+
+.sub-container .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+
+.sub-container .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+
+.sub-container button[aria-expanded="true"] {
+  color: green;
+}
+
+.sub-container button[aria-expanded="true"] .icon::after {
+  width: 0;
+}
+
+.sub-container button[aria-expanded="true"] + .response {
+  opacity: 1;
+  max-height: 9em;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+
+.sub-container .response {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+
+.sub-container .response p {
+  font-size: 90%;
+  font-weight: 500;
+  margin: 2em 0;
 }
 
 footer {
@@ -788,6 +918,9 @@ footer {
     height: 300px;
     width: 40%;
   }
+  .sub-container button {
+    font-size: 100%;
+  }
 }
 
 @media (max-width: 800px) {
@@ -812,6 +945,32 @@ footer {
   }
   .icon-container-chat i {
     font-size: 24px;
+  }
+  #contact-form form {
+    width: 100%;
+    justify-content: center;
+  }
+  .user-input {
+    justify-content: center;
+  }
+  #message-img {
+    display: none;
+  }
+  #contact-container h1 {
+    font-size: 100%;
+  }
+
+  #contact-container p {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 700px) {
+  .sub-container .icon {
+    display: none;
+  }
+  .sub-container .response p {
+    font-size: 80%;
   }
 }
 
@@ -858,6 +1017,29 @@ footer {
   #get-in-touch a {
     font-size: 100%;
   }
+  #contact-form form {
+    padding: 5% 0;
+  }
+  #contact-container p {
+    padding: 2% 3%;
+    font-size: 55%;
+  }
+  #send {
+    font-size: 60%;
+    border-radius: 10px;
+  }
+  .faq-container h2 {
+    font-size: 120%;
+  }
+  .sub-container .response p {
+    font-size: 60%;
+  }
+}
+
+@media (max-width: 590px) {
+  .sub-container button {
+    font-size: 80%;
+  }
 }
 
 @media (max-width: 550px) {
@@ -894,6 +1076,9 @@ footer {
   .p-extra {
     display: block;
   }
+  .faq-container h2 {
+    font-size: 110%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -906,6 +1091,12 @@ footer {
   }
   .role {
     margin: 0;
+  }
+  .faq-container h2 {
+    font-size: 80%;
+  }
+  .sub-container button {
+    font-size: 70%;
   }
 }
 

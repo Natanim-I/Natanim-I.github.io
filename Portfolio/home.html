@@ -178,7 +178,9 @@
             </div>
           </div>
         </div>
-        <button id="btn-resume">Show Full Resume &#x1F4DD;</button>
+        <button id="btn-resume" onclick="showResume()">
+          Show Full Resume &#x1F4DD;
+        </button>
       </section>
       <section id="projects">
         <div id="project-img"></div>
@@ -187,23 +189,48 @@
             <h3>Projects</h3>
             <p>5</p>
           </div>
-          <div class="project" id="p1">
+          <div
+            class="project"
+            id="p1"
+            onmouseenter="showp1()"
+            onmouseleave="hide()"
+          >
             <i class="fas fa-arrow-right" id="icon"></i>
             <p>OASIS Jimma Website</p>
           </div>
-          <div class="project" id="p2">
+          <div
+            class="project"
+            id="p2"
+            onmouseenter="showp2()"
+            onmouseleave="hide()"
+          >
             <i class="fas fa-arrow-right" id="icon"></i>
             <p>Child Adoption Application</p>
           </div>
-          <div class="project" id="p3">
+          <div
+            class="project"
+            id="p3"
+            onmouseenter="showp3()"
+            onmouseleave="hide()"
+          >
             <i class="fas fa-arrow-right" id="icon"></i>
             <p>Property Management System</p>
           </div>
-          <div class="project" id="p4">
+          <div
+            class="project"
+            id="p4"
+            onmouseenter="showp4()"
+            onmouseleave="hide()"
+          >
             <i class="fas fa-arrow-right" id="icon"></i>
             <p>Prisoner Registration</p>
           </div>
-          <div class="project" id="p5">
+          <div
+            class="project"
+            id="p5"
+            onmouseenter="showp5()"
+            onmouseleave="hide()"
+          >
             <i class="fas fa-arrow-right" id="icon"></i>
             <p>EFDA Application</p>
           </div>
