@@ -12,14 +12,14 @@
   </head>
   <body>
     <!--Header area containing Logo image and name also the navigation-->
-    <header>
+    <header id="header">
       <div id="branding">
         <!--Logo image-->
         <img id="logo" src="./assets/images/ability.png" alt="Logo" />
         <h1>Natanim</h1>
       </div>
       <!--Navigation-->
-      <nav>
+      <nav id="nav">
         <a href="home.html" class="nav-link active">Home</a>
         <a href="about.html" class="nav-link">About Me</a>
         <a href="projects.html" class="nav-link">Projects</a>
@@ -28,6 +28,13 @@
           src="./assets/images/menubar.png"
           alt="Menu Icon"
           id="menu-bar-icon"
+          onclick="showMobileMenu()"
+        />
+        <img
+          src="./assets/images/menu-close.webp"
+          alt="Menu Icon"
+          id="menu-close-icon"
+          onclick="closeMobileMenu()"
         />
       </nav>
     </header>

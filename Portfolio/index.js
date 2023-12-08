@@ -1,9 +1,27 @@
+const projectImg = document.getElementById("project-img");
+const header = document.getElementById("header");
+const menuBar = document.getElementById("menu-bar-icon");
+const menuClose = document.getElementById("menu-close-icon");
+const nav = document.getElementById("nav");
+
+function showMobileMenu() {
+  header.classList.add("mobile-header");
+  nav.classList.add("mobile-nav");
+  menuBar.style.display = "none";
+  menuClose.style.display = "block";
+}
+
+function closeMobileMenu() {
+  menuClose.style.display = "none";
+  menuBar.style.display = "block";
+  header.classList.remove("mobile-header");
+  nav.classList.remove("mobile-nav");
+}
+
 function showResume() {
   const btnResume = document.getElementById("btn-resume");
   window.open("./assets/files/NatanimResume.pdf", "_blank");
 }
-
-const projectImg = document.getElementById("project-img");
 
 function showp1() {
   projectImg.style.backgroundImage = 'url("./assets/images/comingsoon.avif")';

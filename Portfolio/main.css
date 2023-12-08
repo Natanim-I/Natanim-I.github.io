@@ -23,6 +23,15 @@ header {
   z-index: 9999;
 }
 
+.mobile-header {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: black;
+  width: 100%;
+  color: wheat;
+}
+
 #branding {
   width: 20%;
   margin-left: 3%;
@@ -54,7 +63,13 @@ nav {
   gap: 1%;
 }
 
-.nav-link {
+.mobile-nav {
+  flex-direction: column;
+  margin-bottom: 50%;
+  margin-left: 10%;
+  gap: 20px;
+}
+nav a {
   color: black;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
@@ -64,6 +79,18 @@ nav {
   text-decoration: none;
   transition: 0.2s ease;
 }
+
+.mobile-nav a {
+  text-align: center;
+  width: 130px;
+  color: green;
+  border: 1px solid wheat;
+  border-radius: 10px;
+  padding: 2%;
+  transition: 0.5s;
+  box-shadow: 0 2px 4px green;
+}
+
 .nav-link:hover {
   border-bottom: 3px solid green;
   animation: waviy 2s infinite;
@@ -77,6 +104,15 @@ nav {
   display: none;
   width: 60px;
   height: 60px;
+}
+
+#menu-close-icon {
+  display: none;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 main {
@@ -928,9 +964,20 @@ footer {
   }
 }
 
+@media (min-width: 800px) {
+  #menu-bar-icon {
+    display: none;
+  }
+  #menu-close-icon {
+    display: none;
+  }
+}
 @media (max-width: 800px) {
   nav a {
     display: none;
+  }
+  .mobile-nav a {
+    display: block;
   }
   #menu-bar-icon {
     display: block;
@@ -1084,6 +1131,9 @@ footer {
   .faq-container h2 {
     font-size: 110%;
   }
+  .mobile-nav {
+    margin-bottom: 60%;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1119,6 +1169,9 @@ footer {
   #chat h1 {
     font-size: 80%;
   }
+  #logo {
+    display: none;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1141,6 +1194,10 @@ footer {
     width: 40px;
     height: 40px;
   }
+  #menu-close-icon {
+    width: 30px;
+    height: 30px;
+  }
   #get-in-touch a {
     font-size: 70%;
   }
@@ -1156,6 +1213,9 @@ footer {
   }
   .icon-container-chat i {
     font-size: 14px;
+  }
+  .mobile-nav {
+    margin-bottom: 80%;
   }
 }
 
