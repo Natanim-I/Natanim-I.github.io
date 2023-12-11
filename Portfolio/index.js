@@ -4,24 +4,15 @@ const menuBar = document.getElementById("menu-bar-icon");
 const menuClose = document.getElementById("menu-close-icon");
 const nav = document.getElementById("nav");
 const myForm = document.getElementById("contact-me-form");
-const fullname = document.getElementById("fullName");
-const _email = document.getElementById("email");
-const _subject = document.getElementById("subject");
-const fullNameError = document.getElementById("fullNameError");
-const emailError = document.getElementById("emailError");
-const subjectError = document.getElementById("subjectError");
-
-fullname.addEventListener("input", () => {
-  fullNameError.style.display = "none";
-});
-
-_email.addEventListener("input", () => {
-  emailError.style.display = "none";
-});
-
-_subject.addEventListener("input", () => {
-  subjectError.style.display = "none";
-});
+const items = document.querySelectorAll(".sub-container button");
+const titles = document.querySelectorAll("#each-project h2");
+const description = document.querySelectorAll("#each-project p");
+const year = document.querySelectorAll("#each-project h3");
+const images = document.querySelectorAll("#each-project img");
+const status = document.querySelectorAll("#each-project h4");
+const frontEnd = document.querySelectorAll("#each-project ");
+const backEnd = document.querySelectorAll("#each-project ");
+const dataBase = document.querySelectorAll("#each-project ");
 
 function showMobileMenu() {
   header.classList.add("mobile-header");
@@ -65,8 +56,6 @@ function showp5() {
 function hide() {
   projectImg.style.backgroundImage = "";
 }
-
-const items = document.querySelectorAll(".sub-container button");
 
 function toggleResponse() {
   const item = this.getAttribute("aria-expanded");
@@ -141,4 +130,21 @@ function sendMessage(event) {
       });
     return true;
   }
+}
+
+function getProjects() {
+  fetch("https://natanim-21690c8ea239.herokuapp.com/projects")
+    .then((response) => {
+      if (!response.ok) {
+        window.location.href =
+          "https://natanim-i.github.io/Portfolio/error-page.html";
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 }
