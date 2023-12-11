@@ -46,7 +46,7 @@
           hello!
         </p>
         <div id="contact-form">
-          <form id="contact-me-form" onsubmit="sendMessage(event)">
+          <form id="contact-me-form" onsubmit="return sendMessage(event)">
             <div class="user-input">
               <input
                 name="fullName"
@@ -55,6 +55,7 @@
                 placeholder="Full Name"
                 required
               />
+              <h5 id="fullNameError" class="error-message"></h5>
             </div>
             <div class="user-input">
               <input
@@ -64,6 +65,7 @@
                 placeholder="E-mail"
                 required
               />
+              <h5 id="emailError" class="error-message"></h5>
             </div>
             <div class="user-input">
               <input
@@ -73,6 +75,7 @@
                 placeholder="Subject"
                 required
               />
+              <h5 id="subjectError" class="error-message"></h5>
             </div>
             <div class="user-input">
               <textarea

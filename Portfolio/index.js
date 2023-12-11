@@ -4,6 +4,24 @@ const menuBar = document.getElementById("menu-bar-icon");
 const menuClose = document.getElementById("menu-close-icon");
 const nav = document.getElementById("nav");
 const myForm = document.getElementById("contact-me-form");
+const fullname = document.getElementById("fullName");
+const _email = document.getElementById("email");
+const _subject = document.getElementById("subject");
+const fullNameError = document.getElementById("fullNameError");
+const emailError = document.getElementById("emailError");
+const subjectError = document.getElementById("subjectError");
+
+fullname.addEventListener("input", () => {
+  fullNameError.style.display = "none";
+});
+
+_email.addEventListener("input", () => {
+  emailError.style.display = "none";
+});
+
+_subject.addEventListener("input", () => {
+  subjectError.style.display = "none";
+});
 
 function showMobileMenu() {
   header.classList.add("mobile-header");
@@ -71,32 +89,56 @@ function sendMessage(event) {
   const subject = document.getElementById("subject").value;
   const message = document.getElementById("message").value;
 
-  const nameRegex = /^[a-zA-Z]{1,}$/;
+  const nameRegex = /^[a-zA-Z\s]{1,}$/;
+  const emailRegex = /^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$/;
 
-  const data = {
-    fullName: fullName,
-    email: email,
-    subject: subject,
-    message: message,
-  };
+  if (!nameRegex.test(fullName)) {
+    document.querySelector("#fullNameError").style.display = "block";
+    document.querySelector("#fullNameError").textContent =
+      "Full Name must contain only characters!";
+    return false;
+  } else if (fullName.length < 3) {
+    document.querySelector("#fullNameError").style.display = "block";
+    document.querySelector("#fullNameError").textContent =
+      "Full Name must have atleast 3 characters!";
+    return false;
+  } else if (!emailRegex.test(email)) {
+    document.querySelector("#emailError").style.display = "block";
+    document.querySelector("#emailError").textContent =
+      "Incorrect Email format!!!";
+    return false;
+  } else if (subject.length < 3) {
+    document.querySelector("#subjectError").style.display = "block";
+    document.querySelector("#subjectError").textContent =
+      "Subject must have atleast 3 characters!";
+    return false;
+  } else {
+    const data = {
+      fullName: fullName,
+      email: email,
+      subject: subject,
+      message: message,
+    };
 
-  fetch("https://natanim-21690c8ea239.herokuapp.com/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data),
-  })
-    .then((response) => {
-      if (response.status == "200") {
-        window.location.href =
-          "https://natanim-i.github.io/Portfolio/success-page.html";
-      } else {
-        window.location.href =
-          "https://natanim-i.github.io/Portfolio/error-page.html";
-      }
+    fetch("https://natanim-21690c8ea239.herokuapp.com/messages", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
     })
-    .catch((error) => {
-      console.error("An error occurred:", error);
-    });
+      .then((response) => {
+        if (response.status == "200") {
+          window.location.href =
+            "https://natanim-i.github.io/Portfolio/success-page.html";
+        } else {
+          window.location.href =
+            "https://natanim-i.github.io/Portfolio/error-page.html";
+        }
+      })
+      .catch((error) => {
+        console.error("An error occurred:", error);
+      });
+    return true;
+  }
 }
