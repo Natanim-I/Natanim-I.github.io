@@ -78,7 +78,7 @@ function sendMessage(event) {
     message: message,
   };
 
-  fetch("https://natanim-21690c8ea239.herokuapp.com/messages", {
+  fetch("http://localhost:3000/messages", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -86,7 +86,7 @@ function sendMessage(event) {
     body: JSON.stringify(data),
   })
     .then((response) => {
-      if (response.status == "Sucess") {
+      if (response.status == "200") {
         window.location.href =
           "https://natanim-i.github.io/Portfolio/success-page.html";
       } else {
