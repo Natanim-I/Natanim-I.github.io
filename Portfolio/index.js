@@ -71,6 +71,8 @@ function sendMessage(event) {
   const subject = document.getElementById("subject").value;
   const message = document.getElementById("message").value;
 
+  const nameRegex = /^[a-zA-Z]{1,}$/;
+
   const data = {
     fullName: fullName,
     email: email,

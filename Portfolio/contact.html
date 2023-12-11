@@ -46,7 +46,7 @@
           hello!
         </p>
         <div id="contact-form">
-          <form id="contact-me-form">
+          <form id="contact-me-form" onsubmit="sendMessage(event)">
             <div class="user-input">
               <input
                 name="fullName"
@@ -84,7 +84,7 @@
                 required
               ></textarea>
             </div>
-            <button id="send" onclick="sendMessage(event)">Submit</button>
+            <button type="submit" id="send">Submit</button>
           </form>
           <div id="message-img">
             <img src="assets/images/contact.svg" alt="Contact" />
