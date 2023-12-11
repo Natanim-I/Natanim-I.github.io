@@ -785,6 +785,40 @@ main {
   margin: 2em 0;
 }
 
+#thank-you {
+  font-family: Mosk, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+#thank-you h1 {
+  font-size: 200%;
+  margin: 0;
+  padding: 0;
+}
+
+#thank-you div {
+  margin: 0;
+  padding: 0;
+}
+
+#sent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+#thank-you img {
+  width: 60%;
+}
+
 footer {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 350px;
@@ -964,14 +998,6 @@ footer {
   }
 }
 
-@media (min-width: 800px) {
-  #menu-bar-icon {
-    display: none;
-  }
-  #menu-close-icon {
-    display: none;
-  }
-}
 @media (max-width: 800px) {
   nav a {
     display: none;
@@ -1011,9 +1037,11 @@ footer {
   #contact-container h1 {
     font-size: 100%;
   }
-
   #contact-container p {
     font-size: 60%;
+  }
+  #thank-you h1 {
+    font-size: 150%;
   }
 }
 
@@ -1086,6 +1114,12 @@ footer {
   .sub-container .response p {
     font-size: 60%;
   }
+  #thank-you h1 {
+    font-size: 120%;
+  }
+  #thank-you p {
+    font-size: 80%;
+  }
 }
 
 @media (max-width: 590px) {
@@ -1152,6 +1186,12 @@ footer {
   }
   .sub-container button {
     font-size: 70%;
+  }
+  #thank-you h1 {
+    font-size: 100%;
+  }
+  #thank-you p {
+    font-size: 60%;
   }
 }
 

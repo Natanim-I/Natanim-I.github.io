@@ -3,6 +3,7 @@ const header = document.getElementById("header");
 const menuBar = document.getElementById("menu-bar-icon");
 const menuClose = document.getElementById("menu-close-icon");
 const nav = document.getElementById("nav");
+const myForm = document.getElementById("contact-me-form");
 
 function showMobileMenu() {
   header.classList.add("mobile-header");
@@ -62,3 +63,38 @@ function toggleResponse() {
 }
 
 items.forEach((item) => item.addEventListener("click", toggleResponse));
+
+function sendMessage(event) {
+  event.preventDefault();
+  const fullName = document.getElementById("fullName").value;
+  const email = document.getElementById("email").value;
+  const subject = document.getElementById("subject").value;
+  const message = document.getElementById("message").value;
+
+  const data = {
+    fullName: fullName,
+    email: email,
+    subject: subject,
+    message: message,
+  };
+
+  fetch("https://natanim-21690c8ea239.herokuapp.com/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => {
+      if (response.status == "Sucess") {
+        window.location.href =
+          "https://natanim-i.github.io/Portfolio/success-page.html";
+      } else {
+        window.location.href =
+          "https://natanim-i.github.io/Portfolio/error-page.html";
+      }
+    })
+    .catch((error) => {
+      console.error("An error occurred:", error);
+    });
+}
