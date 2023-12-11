@@ -78,7 +78,7 @@ function sendMessage(event) {
     message: message,
   };
 
-  fetch("http://localhost:3000/messages", {
+  fetch("https://natanim-21690c8ea239.herokuapp.com/messages", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
