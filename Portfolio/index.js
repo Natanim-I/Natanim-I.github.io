@@ -13,6 +13,9 @@ const status = document.querySelectorAll("#each-project h4");
 const frontEnd = document.querySelectorAll("#each-project ");
 const backEnd = document.querySelectorAll("#each-project ");
 const dataBase = document.querySelectorAll("#each-project ");
+const EthiopiaImg = document.querySelectorAll(".eth");
+const hobbyImg = document.querySelectorAll(".hobby");
+const proImg = document.querySelectorAll(".pro");
 
 function showMobileMenu() {
   header.classList.add("mobile-header");
@@ -55,6 +58,54 @@ function showp5() {
 
 function hide() {
   projectImg.style.backgroundImage = "";
+}
+
+function showEthiopia() {
+  EthiopiaImg.forEach((img) => {
+    img.style.display = "block";
+  });
+  proImg.forEach((img) => {
+    img.style.display = "none";
+  });
+  hobbyImg.forEach((img) => {
+    img.style.display = "none";
+  });
+}
+
+function showHobbies() {
+  hobbyImg.forEach((img) => {
+    img.style.display = "block";
+  });
+  proImg.forEach((img) => {
+    img.style.display = "none";
+  });
+  EthiopiaImg.forEach((img) => {
+    img.style.display = "none";
+  });
+}
+
+function showProjects() {
+  proImg.forEach((img) => {
+    img.style.display = "block";
+  });
+  EthiopiaImg.forEach((img) => {
+    img.style.display = "none";
+  });
+  hobbyImg.forEach((img) => {
+    img.style.display = "none";
+  });
+}
+
+function showAll() {
+  proImg.forEach((img) => {
+    img.style.display = "block";
+  });
+  EthiopiaImg.forEach((img) => {
+    img.style.display = "block";
+  });
+  hobbyImg.forEach((img) => {
+    img.style.display = "block";
+  });
 }
 
 function toggleResponse() {

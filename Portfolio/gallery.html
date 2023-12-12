@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gallery</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!--Header area containing Logo image and name also the navigation-->
+    <header id="header">
+      <div id="branding">
+        <!--Logo image-->
+        <img id="logo" src="./assets/images/ability.png" alt="Logo" />
+        <h1>Natanim</h1>
+      </div>
+      <!--Navigation-->
+      <nav id="nav">
+        <a href="home.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Me</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="gallery.html" class="nav-link active">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact Me</a>
+        <img
+          src="./assets/images/menubar.png"
+          alt="Menu Icon"
+          id="menu-bar-icon"
+          onclick="showMobileMenu()"
+        />
+        <img
+          src="./assets/images/menu-close.webp"
+          alt="Menu Icon"
+          id="menu-close-icon"
+          onclick="closeMobileMenu()"
+        />
+      </nav>
+    </header>
+    <main id="gallery">
+      <h1>My Image Collections</h1>
+      <div id="filters">
+        <button id="eth" onclick="showEthiopia()">Ethiopia</button>
+        <button id="hobby" onclick="showHobbies()">Hobbies</button>
+        <button id="project" onclick="showProjects()">Projects</button>
+        <button id="reset" onclick="showAll()">Reset</button>
+      </div>
+      <div class="gallery">
+        <img class="eth" src="assets/images/eth8.jpg" />
+        <img class="pro" src="assets/images/adoption-1.png" />
+        <img class="hobby" src="assets/images/image2.jpg" />
+        <img class="eth" src="assets/images/eth1.jpg" />
+        <img class="hobby" src="assets/images/img1.JPG" />
+        <img class="pro" src="assets/images/adoption-2.png" />
+        <img class="pro" src="assets/images/adoption-3.png" />
+        <img class="pro" src="assets/images/adoption-4.png" />
+        <img class="hobby" src="assets/images/img2.JPG" />
+        <img class="eth" src="assets/images/eth2.jpg" />
+        <img class="hobby" src="assets/images/image3.jpg" />
+        <img class="hobby" src="assets/images/img8.jpg" />
+        <img class="pro" src="assets/images/prison-1.png" />
+        <img class="hobby" src="assets/images/image4.jpg" />
+        <img class="eth" src="assets/images/eth3.jpg" />
+        <img class="eth" src="assets/images/eth4.jpg" />
+        <img class="pro" src="assets/images/efda.png" />
+        <img class="pro" src="assets/images/efda-2.png" />
+        <img class="eth" src="assets/images/eth5.jpg" />
+        <img class="hobby" src="assets/images/img3.JPG" />
+        <img class="pro" src="assets/images/efda-3.png" />
+        <img class="hobby" src="assets/images/img4.jpg" />
+        <img class="hobby" src="assets/images/img5.jpg" />
+        <img class="eth" src="assets/images/eth6.jpg" />
+        <img class="hobby" src="assets/images/img7.jpg" />
+        <img class="eth" src="assets/images/eth7.jpg" />
+        <img class="pro" src="assets/images/doconnect.png" />
+        <img class="hobby" src="assets/images/img9.jpg" />
+        <img class="hobby" src="assets/images/img10.jpg" />
+        <img class="eth" src="assets/images/eth9.jpg" />
+        <img class="hobby" src="assets/images/img11.jpg" />
+        <img class="eth" src="assets/images/eth11.jpg" />
+        <img class="hobby" src="assets/images/img12.jpg" />
+        <img class="eth" src="assets/images/eth12.jpg" />
+        <img class="hobby" src="assets/images/img13.jpg" />
+        <img class="eth" src="assets/images/eth13.jpg" />
+      </div>
+    </main>
+    <!--A footer area to provide basic information that should be found in a footer-->
+    <footer>
+      <div id="details">
+        <h6>Natanim Eibrahim</h6>
+        <h6>natanimissa@gmail.com</h6>
+        <h6>+1-(347)-316-1829</h6>
+      </div>
+      <div class="icons">
+        <div class="icon-container">
+          <a href="https://www.instagram.com/"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+        <div class="icon-container">
+          <a href="https://www.facebook.com/"
+            ><i class="fab fa-facebook"></i
+          ></a>
+        </div>
+        <div class="icon-container">
+          <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="icon-container">
+          <a href="https://www.linkedin.com/"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </div>
+        <div class="icon-container">
+          <a href="https://github.com/"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div id="copy">
+        <h6 id="copy-rights">Natanim &copy; ALL RIGHTS RESERVED</h6>
+      </div>
+    </footer>
+    <script src="index.js"></script>
+  </body>
+</html>
