@@ -1556,6 +1556,13 @@ footer {
   #logo {
     display: none;
   }
+  #gallery h1 {
+    font-size: 150%;
+  }
+  #filters button {
+    padding: 5px 10px;
+    font-size: 80%;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1606,6 +1613,12 @@ footer {
   }
   .mobile-nav {
     margin-bottom: 80%;
+  }
+  #gallery h1 {
+    font-size: 120%;
+  }
+  #filters button {
+    font-size: 60%;
   }
 }
 
