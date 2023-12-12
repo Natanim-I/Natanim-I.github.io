@@ -955,6 +955,10 @@ main {
   margin-bottom: 50px;
 }
 
+#aca {
+  margin-bottom: 0;
+}
+
 #background {
   display: flex;
   flex-direction: column;
@@ -984,30 +988,86 @@ main {
 #skills-bar {
   display: flex;
   flex-direction: row;
-  gap: 2%;
+  flex-wrap: wrap;
+  gap: 5%;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0;
 }
 
 .wrapper {
   box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
     -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
-  width: 400px;
-  padding: 30px 0;
-  border-radius: 10px;
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 50px;
 }
 
 .c-bar {
-  width: 250px;
-  height: 250px;
-  background: conic-gradient(green 1.5deg, #fff 0deg);
+  width: 200px;
+  height: 200px;
+  background: conic-gradient(green 35deg, #fff 0deg);
   border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.15),
+    -6px -6px 10px -1px rgba(255, 255, 255, 0.7);
 }
 
+.c-bar::before {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: inset 6px 10px -1px rgba(0, 0, 0, 0.15),
+    inset -6px 10px -1px rgba(255, 255, 255, 0.7);
+}
+
+#html::before {
+  background-image: url("assets/images/HTML5.png");
+}
+
+#css::before {
+  background-image: url("assets/images/css3.png");
+}
+
+#js::before {
+  background-image: url("assets/images/javascript.png");
+}
+
+#react::before {
+  background-image: url("assets/images/react.png");
+}
+
+#vue::before {
+  background-image: url("assets/images/vue.png");
+}
+
+#python::before {
+  background-image: url("assets/images/python.png");
+}
+
+#java::before {
+  background-image: url("assets/images/java.png");
+}
+
+#node::before {
+  background-image: url("assets/images/node.png");
+}
+
+#skills-bar label {
+  font-weight: bolder;
+  font-size: 24px;
+}
 footer {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   height: 350px;
