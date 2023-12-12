@@ -638,10 +638,18 @@ main {
   border-radius: 20px;
 }
 
+.pr1-img,
+.pr2-img,
+.pr3-img,
+.pr4-img,
+.pr5-img {
+  transition: opacity 1s ease;
+}
+
 #technologies {
   display: flex;
   flex-direction: row;
-  gap: 2%;
+  gap: 1%;
   justify-content: flex-end;
 }
 
@@ -656,6 +664,7 @@ main {
   height: 2px;
   margin-top: 30px;
 }
+
 #contact-container {
   margin: 0;
   padding: 0;
@@ -1137,6 +1146,17 @@ footer {
   #thank-you h1 {
     font-size: 150%;
   }
+  #project-show {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #left {
+    width: 100%;
+  }
+  #right {
+    width: 100%;
+  }
 }
 
 @media (max-width: 700px) {
@@ -1230,6 +1250,9 @@ footer {
   #details h6 {
     margin: 10px;
   }
+  #left h2 {
+    font-size: 150%;
+  }
 }
 @media (max-width: 500px) {
   .waviy span {
@@ -1311,6 +1334,12 @@ footer {
 @media (max-width: 400px) {
   .p-description {
     font-size: 60%;
+  }
+  #left h2 {
+    font-size: 120%;
+  }
+  .tech {
+    font-size: 80%;
   }
 }
 
