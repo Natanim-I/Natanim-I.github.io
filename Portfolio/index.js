@@ -34,19 +34,19 @@ function showResume() {
 }
 
 function showp1() {
-  projectImg.style.backgroundImage = 'url("./assets/images/comingsoon.avif")';
+  projectImg.style.backgroundImage = 'url("./assets/images/oasis-1.avif")';
 }
 
 function showp2() {
-  projectImg.style.backgroundImage = 'url("./assets/images/adoption.png")';
+  projectImg.style.backgroundImage = 'url("./assets/images/adoption-1.png")';
 }
 
 function showp3() {
-  projectImg.style.backgroundImage = 'url("./assets/images/dabinventory.png")';
+  projectImg.style.backgroundImage = 'url("./assets/images/dab-1.png")';
 }
 
 function showp4() {
-  projectImg.style.backgroundImage = 'url("./assets/images/prison.png")';
+  projectImg.style.backgroundImage = 'url("./assets/images/prison-1.png")';
 }
 
 function showp5() {
@@ -142,7 +142,90 @@ function getProjects() {
       return response.json();
     })
     .then((data) => {
-      console.log(data);
+      const titles = document.querySelectorAll(".p-top");
+      const years = document.querySelectorAll(".p-year");
+      const descs = document.querySelectorAll(".p-desc");
+      const pStatus = document.querySelectorAll(".status");
+      const fronts = document.querySelectorAll(".front");
+      const backs = document.querySelectorAll(".back");
+      const datas = document.querySelectorAll(".data");
+      const pr1Images = document.querySelectorAll(".pr1-img");
+      const pr2Images = document.querySelectorAll(".pr2-img");
+      const pr3Images = document.querySelectorAll(".pr3-img");
+      const pr4Images = document.querySelectorAll(".pr4-img");
+      const pr5Images = document.querySelectorAll(".pr5-img");
+
+      let i = 0;
+      titles.forEach((title) => {
+        title.textContent = data[i].name;
+        i++;
+      });
+
+      let j = 0;
+      years.forEach((year) => {
+        year.textContent = data[j].year;
+        j++;
+      });
+
+      let k = 0;
+      descs.forEach((desc) => {
+        desc.textContent = data[k].description;
+        k++;
+      });
+
+      let l = 0;
+      pStatus.forEach((stat) => {
+        stat.textContent = data[l].status;
+        l++;
+      });
+
+      let m = 0;
+      fronts.forEach((front) => {
+        front.textContent = data[m].frontEnd;
+        m++;
+      });
+
+      let n = 0;
+      backs.forEach((back) => {
+        back.textContent = data[n].backEnd;
+        n++;
+      });
+
+      let o = 0;
+      datas.forEach((pdata) => {
+        pdata.textContent = data[o].dataBase;
+        o++;
+      });
+
+      let p = 0;
+      pr1Images.forEach((pimg) => {
+        pimg.src = data[0].images[p];
+        p++;
+      });
+
+      let q = 0;
+      pr2Images.forEach((pimg) => {
+        pimg.src = data[1].images[q];
+        q++;
+      });
+
+      let r = 0;
+      pr3Images.forEach((pimg) => {
+        pimg.src = data[2].images[r];
+        r++;
+      });
+
+      let s = 0;
+      pr4Images.forEach((pimg) => {
+        pimg.src = data[3].images[s];
+        s++;
+      });
+
+      let t = 0;
+      pr5Images.forEach((pimg) => {
+        pimg.src = data[4].images[t];
+        t++;
+      });
     })
     .catch((error) => {
       console.log(error);

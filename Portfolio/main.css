@@ -571,6 +571,91 @@ main {
   transition: 0.35s 0.35s transform cubic-bezier(0.1, 0.72, 0.4, 0.97);
 }
 
+#each-project {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0;
+  padding: 0;
+  margin-left: 8%;
+  font-family: sans-serif;
+  margin-bottom: 100px;
+}
+
+#project-show {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  justify-content: space-around;
+}
+
+#left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+#left h2 {
+  font-size: 200%;
+}
+
+.status {
+  padding: 3% 5%;
+  background-color: green;
+  color: white;
+  border-radius: 15px;
+}
+#right {
+  width: 40%;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+#right h3 {
+  font-size: 120%;
+}
+
+#right p {
+  font-size: 80%;
+}
+
+.image-stack {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  perspective: 1000px;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.project-img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 20px;
+}
+
+#technologies {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  justify-content: flex-end;
+}
+
+.tech {
+  padding: 3% 5%;
+  border: 2px solid green;
+  border-radius: 10px;
+}
+#each-project hr {
+  width: 100%;
+  color: gray;
+  height: 2px;
+  margin-top: 30px;
+}
 #contact-container {
   margin: 0;
   padding: 0;
